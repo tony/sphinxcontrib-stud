@@ -1,0 +1,4 @@
+stud
+====
+
+Sphinx extension
