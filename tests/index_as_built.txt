@@ -8,30 +8,18 @@ Transclusions
 
 Transcluding source1 id1 (should display 'source1_id1')
 
-source1_id1
+AA
 
-Transcluding source1 id2 (should display 'source1_id2')
+AB
 
-source1_id2
+AC
 
-Transcluding source2 id1 (should display 'A' and 'B')
-
-A
-
-B
+Transcluding source1 id1 (should display 'source1_id1')
 
 
-Errors
-======
+BABA
+----
 
-Transcluding from unexisiting file (should display an error message)
+   BBBB
 
->>Unable to find source test_source_MISSING<<
-
-Transcluding from unexisting target (should display error message)
-
->>Unable to find target id_missing in source test_source1<<
-
-Wrong directive: (nothing should be displayed)
-
-End transclusions
+   CCCC
