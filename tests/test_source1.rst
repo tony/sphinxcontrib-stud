@@ -1,20 +1,30 @@
 :orphan:
 
-.. tz:: id1
+.. st:: id1
 
-AA
+AAAA
 
-AB
+AABB
 
-AC
+AACC
 
-.. tz:: id2
+.. st:: id2
 
-BABA
+BBAA
 ====
 
     BBBB
 
-    CCCC
+    BBCC
 
+.. _anchor1:
 
+BBDD
+
+.. st:: id3
+
+CCAA
+
+.. st:: id4
+
+DDAA

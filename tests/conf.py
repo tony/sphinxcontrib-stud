@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# test-transcluder documentation build configuration file, created by
+# test-stud documentation build configuration file, created by
 # sphinx-quickstart on Sun Oct 14 22:34:32 2012.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -25,7 +25,7 @@ sys.path.insert(0, os.path.abspath('..'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['tzip']
+extensions = ['stud']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'test-transcluder'
+project = u'test-stud'
 copyright = u'2012, guibog'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -183,7 +183,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'test-transcluder.tex', u'test-transcluder Documentation',
+  ('index', 'test-stud.tex', u'test-stud Documentation',
    u'guibog', 'manual'),
 ]
 
@@ -213,7 +213,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'test-transcluder', u'test-transcluder Documentation',
+    ('index', 'test-stud', u'test-stud Documentation',
      [u'guibog'], 1)
 ]
 
@@ -227,8 +227,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'test-transcluder', u'test-transcluder Documentation',
-   u'guibog', 'test-transcluder', 'One line description of project.',
+  ('index', 'test-stud', u'test-stud Documentation',
+   u'guibog', 'test-stud', 'One line description of project.',
    'Miscellaneous'),
 ]
 

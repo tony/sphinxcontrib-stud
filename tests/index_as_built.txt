@@ -1,25 +1,31 @@
 
-test-transcluder
-****************
+test-stud
+*********
 
 
 Transclusions
 =============
 
-Transcluding source1 id1 (should display 'source1_id1')
+Transcluding source1 id1 (should display 'AA*')
 
-AA
+AAAA
 
-AB
+AABB
 
-AC
+AACC
 
-Transcluding source1 id1 (should display 'source1_id1')
+Transcluding source1 id2 (should display 'BB*')
 
 
-BABA
+BBAA
 ----
 
    BBBB
 
-   CCCC
+   BBCC
+
+BBDD
+
+Transcluding source1 id3 (should display 'CC*')
+
+CCAA
