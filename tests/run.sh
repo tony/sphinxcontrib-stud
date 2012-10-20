@@ -15,8 +15,6 @@ for f in _build/text/$gl/index.txt; do
     if [ $? -eq 0 ]
         then echo "OK"
     fi
-
-
     # Uncomment this to overwrite result files
     #cp -i $f $r
 done
