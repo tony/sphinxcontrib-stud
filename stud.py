@@ -56,7 +56,7 @@ def _transclude(tree, source, from_id, to_id, info):
         # TODO, should use ascend=True but it includes main doctree elements,
         # including studs ~~~
         if _is_target(sibling, to_id) and not _is_target(sibling, from_id):
-            info("stub: found next target, breaking %s" % sibling)
+            info("stub: found next target, breaking")
             break
         contents.append(_prune_next(sibling.deepcopy(), to_id))
     else:
@@ -88,7 +88,7 @@ def process_stud(app, doctree, fromdocname):
     doctrees = {}
     for node in doctree.traverse(stud):
         source = node.attributes['source']
-        target_id = _id_prefix + node.attributes['target_id'].lower()
+        target_id = _id_prefix + node.attributes['target_id']
         if node.attributes['debug']:
             doctree.reporter.report_level = doctree.reporter.INFO_LEVEL
         else:
@@ -99,19 +99,20 @@ def process_stud(app, doctree, fromdocname):
         if isa(doctrees[source], WrongSourceDoctree):
             err = "Unable to find source %s" % source
             warn(err, line=node.line)
-            node.replace_self(nodes.problematic(err, err))
-            return
-        new_content = _transclude(doctrees[source], source, target_id, None, info)
-        if new_content is None:
-            err = "Unable to find target %s in source %s" % (target_id, source)
-            warn(err, line=node.line)
-            node.replace_self(nodes.problematic(err, err))
-        elif new_content is []:
-            err = "Empty target %s in source %s" % (target_id, source)
-            warn(err, line=node.line)
-            node.replace_self([])
+            replacement = nodes.problematic(err, err)
         else:
-            node.replace_self(new_content)
+            new_content = _transclude(doctrees[source], source, target_id, None, info)
+            if new_content is None:
+                err = "Unable to find target %s in source %s" % (target_id, source)
+                warn(err, line=node.line)
+                replacement = nodes.problematic(err, err)
+            elif new_content is []:
+                err = "Empty target %s in source %s" % (target_id, source)
+                warn(err, line=node.line)
+                replacement = []
+            else:
+                replacement = new_content
+        node.replace_self(replacement)
     doctree.reporter.report_level = _keep_report_level
 
 def setup(app):
