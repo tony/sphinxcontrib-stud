@@ -1,5 +1,3 @@
 :orphan:
 
-Test2
-
-.. stud:: test2/source id1
+.. stud:: ./source id1

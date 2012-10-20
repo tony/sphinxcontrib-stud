@@ -32,8 +32,13 @@ class stud(nodes.General, nodes.Element):
 class WrongSourceDoctree():
     pass
 
-def _load_source_doctree(env, source):
-    path = os.path.join(env.doctreedir, "%s.doctree" % source)
+def _load_source_doctree(doctreedir, source, fromdocname):
+    if source.startswith('./'):  # Relative source
+        local_path = fromdocname[:fromdocname.rfind('/')]
+        source = source[2:]
+    else:
+        local_path = ''
+    path = os.path.join(doctreedir, local_path, "%s.doctree" % source)
     try:
         f = open(path)
         return pickle.load(f)
@@ -88,9 +93,9 @@ def process_stud(app, doctree, fromdocname):
             doctree.reporter.report_level = doctree.reporter.INFO_LEVEL
         else:
             doctree.reporter.report_level = _keep_report_level
-        info("stud extension: studding %s %s" % (source, target_id), line=node.line)
+        info("stud: studding %s %s" % (source, target_id))
         if source not in doctrees:
-            doctrees[source] = _load_source_doctree(env, source)
+            doctrees[source] = _load_source_doctree(env.doctreedir, source, fromdocname)
         if isa(doctrees[source], WrongSourceDoctree):
             err = "Unable to find source %s" % source
             warn(err, line=node.line)
