@@ -11,7 +11,7 @@ for f in _build/text/$gl/index.txt; do
     r=`echo $f | sed 's@^_build/text/test\(.*\)/index.txt@test\1/result.txt@'`
     echo
     echo CHECK: comparing $r and $f
-    diff $r $f
+    diff "$r" "$f"
     if [ $? -eq 0 ]
         then echo "OK"
     fi

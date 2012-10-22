@@ -17,12 +17,17 @@ isa = isinstance
 _id_prefix = 'std:st-'
 
 class StudDirective(Directive):
-    required_arguments = 2
+    required_arguments = 1
+    final_argument_whitespace = True
     option_spec = {
         'debug': directives.flag,
     }
     def run(self):
-        source, target_id = self.arguments
+        arg = self.arguments[0]
+        arg = arg.replace('\0', '')
+        arg = arg.replace('\\ ', '\0')
+        source, target_id = arg.split(' ')
+        source, target_id = source.replace('\0', ' '), target_id.replace('\0', ' ')
         debug = 'debug' in self.options
         return [stud(source=source, target_id=target_id, debug=debug)]
 
