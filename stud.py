@@ -58,24 +58,28 @@ def _transclude(tree, source, from_id, to_id, info):
     info("stud: %s %s found target node" % (source, from_id))
     for sibling in target.traverse(include_self=True, siblings=True,
                                    descend=False, ascend=True):
-        # TODO, should use ascend=True but it includes main doctree elements,
-        # including studs ~~~
         if _is_target(sibling, to_id) and not _is_target(sibling, from_id):
             info("stub: found next target, breaking")
             break
-        contents.append(_prune_next(sibling.deepcopy(), to_id))
+        pruned_sibling, pruned = _prune_next(sibling.deepcopy(), to_id)
+        contents.append(pruned_sibling)
+        if pruned:
+            break
     else:
         info("stud: reached end of doctree")
     return contents
 
 def _prune_next(tree, to_id):
     new_children = []
+    pruned = False
     for child in tree.children:
         if _is_target(child, to_id):
+            pruned = True
             break
-        new_children.append(_prune_next(child, to_id))
+        pruned_child, pruned = _prune_next(child, to_id)
+        new_children.append(pruned_child)
     tree.children = new_children
-    return tree
+    return tree, pruned
 
 def _is_target(node, to_id):
     if not isa(node, nodes.Element):
