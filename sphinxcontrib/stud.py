@@ -1,6 +1,6 @@
 # -*- encoding: utf8 -*-
 """
-    sphinxcontrib.stub
+    sphinxcontrib.stud
     ~~~~~~~~~~~~~~~~~~
 
     Stud directive for sphinx documentation.
@@ -69,7 +69,7 @@ def _transclude(tree, source, from_id, to_id, info):
     for sibling in target.traverse(include_self=True, siblings=True,
                                    descend=False, ascend=True):
         if _is_target(sibling, to_id) and not _is_target(sibling, from_id):
-            info("stub: found next target, breaking")
+            info("stud: found next target, breaking")
             break
         pruned_sibling, pruned = _prune_next(sibling.deepcopy(), to_id)
         contents.append(pruned_sibling)

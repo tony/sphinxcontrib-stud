@@ -45,7 +45,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'sphinxcontrib-stud'
-copyright = u'2013, Tony Narlock'
+copyright = u'2013, Guibog, Tony Narlock'
 
 rst_prolog = """
 .. note::
