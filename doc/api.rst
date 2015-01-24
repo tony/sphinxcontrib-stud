@@ -4,9 +4,9 @@
 API
 ===
 
-.. module:: sphinxcontrib.stub
+.. module:: sphinxcontrib.stud
 
-.. automodule:: sphinxcontrib.stub
+.. automodule:: sphinxcontrib.stud
     :members:
     :inherited-members:
     :show-inheritance:
