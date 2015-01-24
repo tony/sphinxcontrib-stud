@@ -1,0 +1,12 @@
+====
+TODO
+====
+
+Immediate
+---------
+
+- docs
+- allow ``conf.py`` and directive option to override template for
+  directives and roles.
+
+.. todo:: vim: set filetype=rst:
