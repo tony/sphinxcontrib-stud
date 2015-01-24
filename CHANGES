@@ -1,0 +1,33 @@
+=========
+Changelog
+=========
+
+0.1-dev
+-------
+
+January 24, 2015
+""""""""""""""""
+
+- Docs
+- Tox
+- PEP8
+- Conformance with sphinxcontrib extensions
+- Python package file
+
+Initial
+-------
+
+October 21, 2012
+""""""""""""""""
+
+- Tests, initial commit by guibog
+
+October 18, 2012
+""""""""""""""""
+
+- 0.1.0 initial release
+
+.. _pep257: http://www.python.org/dev/peps/pep-0257/
+.. _pep8: http://www.python.org/dev/peps/pep-0008/
+
+.. todo:: vim: set filetype=rst:

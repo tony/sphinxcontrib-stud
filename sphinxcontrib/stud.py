@@ -1,10 +1,14 @@
 # -*- encoding: utf8 -*-
+"""
+    sphinxcontrib.stub
+    ~~~~~~~~~~~~~~~~~~
 
-"""A stud directive for sphinx documenter"""
+    Stud directive for sphinx documentation.
 
-# guibog@gmail.com
-#
-# https://github.com/guibog/sphinx-stud
+    :copyright: (c) 2013 by Guibog and Tony Narlock.
+    :license: BSD, see LICENSE for more details.
+"""
+
 
 import pprint
 import os
